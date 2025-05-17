@@ -1,0 +1,211 @@
+# Code Repository Snapshot: Shopping To-Do React
+
+--------------------------------------------
+Generated with reposnap v1.3.0
+Project: https://github.com/akhshyganesh/reposnap#readme
+Author: akhshyganesh
+Generated on: 17/5/2025 at 10:32:12 pm
+--------------------------------------------
+
+
+📄 README.md
+  ---
+  # React + Vite
+  
+  This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+  
+  Currently, two official plugins are available:
+  
+  - [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
+  - [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+  
+  ## Expanding the ESLint configuration
+  
+  If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+  
+  ---
+
+📄 eslint.config.js
+  ---
+  import js from '@eslint/js'
+  import globals from 'globals'
+  import reactHooks from 'eslint-plugin-react-hooks'
+  import reactRefresh from 'eslint-plugin-react-refresh'
+  
+  export default [
+    { ignores: ['dist'] },
+    {
+      files: ['**/*.{js,jsx}'],
+      languageOptions: {
+        ecmaVersion: 2020,
+        globals: globals.browser,
+        parserOptions: {
+          ecmaVersion: 'latest',
+          ecmaFeatures: { jsx: true },
+          sourceType: 'module',
+        },
+      },
+      plugins: {
+        'react-hooks': reactHooks,
+        'react-refresh': reactRefresh,
+      },
+      rules: {
+        ...js.configs.recommended.rules,
+        ...reactHooks.configs.recommended.rules,
+        'no-unused-vars': ['error', { varsIgnorePattern: '^[A-Z_]' }],
+        'react-refresh/only-export-components': [
+          'warn',
+          { allowConstantExport: true },
+        ],
+      },
+    },
+  ]
+  
+  ---
+
+📄 index.html
+  ---
+  <!doctype html>
+  <html lang="en">
+  
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite + React</title>
+  </head>
+  
+  <body>
+    <div id="root"></div>
+  
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+  
+  </html>
+  ---
+
+📁 public/
+📁 src/
+  📄 App.css
+    ---
+    
+    ---
+
+  📄 App.jsx
+    ---
+    import { useState } from 'react'
+    import React from 'react'
+    import reactLogo from './assets/react.svg'
+    import viteLogo from '/vite.svg'
+    import './App.css'
+    import ShoopingList from './Shopping'
+    
+    function App() {
+      const [count, setCount] = useState(0)
+    
+      return (
+        <>
+    <ShoopingList/>
+        </>
+      )
+    }
+    
+    export default App
+    
+    ---
+
+  📄 Shopping.jsx
+    ---
+    import React, { useState } from 'react';
+    
+    const ShoopingList = () => {
+      const [mylist, setmylist] = useState(["Tomato", "Shirt", "Orange", "Grape", "Ball"]);
+      const [item, setitem] = useState("");
+    
+      const handleChange = (event) => {
+        setitem(event.target.value);
+      };
+    
+      const handleAdd = () => {
+        if (item.trim()) {
+          setmylist([...mylist, item]);
+          setitem("");
+        }
+      };
+    
+      return (
+        <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-100 to-purple-200 p-4">
+          <div className="w-full max-w-md bg-white rounded-2xl shadow-xl p-6">
+            <h1 className="text-3xl font-semibold text-center text-purple-700 mb-6">🛒 Shopping List</h1>
+            
+            <div className="flex gap-2 mb-4">
+              <input
+                type="text"
+                value={item}
+                onChange={handleChange}
+                placeholder="Enter an item"
+                className="flex-1 px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-400"
+              />
+              <button
+                onClick={handleAdd}
+                className="px-4 py-2 bg-purple-600 text-white font-medium rounded-lg hover:bg-purple-700 transition duration-200"
+              >
+                Add
+              </button>
+            </div>
+    
+            <ul className="space-y-2">
+              {mylist.map((item, index) => (
+                <li
+                  key={index}
+                  className="px-4 py-2 bg-purple-100 text-purple-800 rounded-lg hover:bg-purple-200 transition duration-200"
+                >
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      );
+    };
+    
+    export default ShoopingList;
+    
+    ---
+
+  📁 assets/
+  📄 index.css
+    ---
+    @import "tailwindcss";
+    ---
+
+  📄 main.jsx
+    ---
+    import { StrictMode } from 'react'
+    import React from 'react'
+    import { createRoot } from 'react-dom/client'
+    import './index.css'
+    import App from './App.jsx'
+    
+    createRoot(document.getElementById('root')).render(
+      <StrictMode>
+        <App />
+      </StrictMode>,
+    )
+    
+    ---
+
+📄 vite.config.js
+  ---
+  import { defineConfig } from 'vite'
+  import tailwindcss from '@tailwindcss/vite'
+  export default defineConfig({
+    plugins: [
+      tailwindcss(),
+    ],
+  })
+  ---
+
+
+# Snapshot Summary
+Total files processed: 9
