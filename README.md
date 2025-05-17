@@ -1,16 +1,61 @@
-<<<<<<< HEAD
-# React + Vite
+# 🛍️ Shopping To-Do List - React + TailwindCSS
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A minimal yet stylish shopping to-do list app built using **React**, **Vite**, and **Tailwind CSS**. This app allows users to add and display items in a dynamic list with a modern UI.
 
-Currently, two official plugins are available:
+## 🚀 Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Add shopping items dynamically
+- Responsive design with Tailwind CSS
+- Clean and simple user interface
+- Built using Vite for fast development
 
-## Expanding the ESLint configuration
+## 🛠️ Tech Stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
-=======
-# Shopping-To-Do-React
->>>>>>> deb5bf3a9e4078fd4204338f3017196b287a581e
+- **React** – Frontend library
+- **Vite** – Development and build tool
+- **Tailwind CSS** – Utility-first CSS framework
+- **ESLint** – For code linting
+
+## 📂 Project Structure
+<pre>
+  ```
+  src/
+├── App.jsx
+├── Shopping.jsx
+├── main.jsx
+├── App.css
+├── index.css
+└── assets/
+public/
+index.html
+vite.config.js
+  ```
+</pre>
+
+
+## 💡 How to Use
+
+### 1. Clone the Repository
+
+git clone https://github.com/yourusername/shopping-todo-react.git
+cd shopping-todo-react
+
+### 2. Install Dependencies
+
+npm install
+
+### 3. Run the App
+
+npm run dev
+
+✨ Sample UI
+Input field to enter new items
+
+Add button to append items to the list
+
+List of items styled with hover effects
+
+The app will be available at http://localhost:5173/.
+
+GitHub Repo : [https://github.com/Vishwanathangit/Shopping-To-Do-React.git]
+Live Demo : [https://shopping-to-do-react.vercel.app/]
